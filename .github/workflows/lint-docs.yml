@@ -1,0 +1,23 @@
+name: lint-docs
+run-name: #{{ github.actor }} is linting Markdown docs
+on:
+    pull_request:
+        paths:
+            - '**/*.md'
+    push:
+        paths:
+            - '**/*.md'
+    workflow_dispatch:
+jobs:
+    run-md-lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 21
+            - uses: DavidAnson/markdownlint-cli2-action@v15
+              with:
+                  globs: |
+                      *.md
+                      **/*.md
