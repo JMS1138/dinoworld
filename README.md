@@ -19,4 +19,4 @@ TODO
 ## Authors
 
 - Derek Chen-Becker `<github@chen-becker.org>`
-- Josh Schutte `<email here>`
+- Josh Schutte `<jschutte1138@gmail.com>`
