@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Propagate any failures in the script
+set -o errexit
+
+# If any of the files being checked in are Markdown, we need to lint them before committing
+if git diff --cached --name-only --diff-filter=ACM | grep -qE '\.md$'; then
+    markdownlint-cli2 *.md **/*.md
+fi
+
